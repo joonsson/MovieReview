@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="stylez.css">
+    <link rel="stylesheet" type="text/css" href="./stylez.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Spectral+SC" rel="stylesheet">
     <title>Moviez</title>
 </head>
@@ -13,20 +13,16 @@
 <body>
     <section class="container">
         <div id="imageDiv">
-            <img id="image" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZDk2NmNhZDgtZDgzZS00NTRkLWFiYjUtNGMzZTYwNTFhYjFmXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,634,1000_AL_.jpg">
+            <img id="image">
         </div>
         <div id="textDiv">
-            <h1>Star Wars</h1>
-            <p>Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from
-                the Empire's world-destroying battle-station while also attempting to rescue Princess Leia from the evil
-                Darth Vader. </p>
-            <ul>
-                <li>Carrie Fisher</li>
-                <li>Mark Hamill</li>
-                <li>Harrison Ford</li>
-            </ul>
+            <h2 id="title"></h2>
+            <p id="text"></p>
+            <ul id="list"></ul>
         </div>
     </section>
+    <script src="./data.js"></script>
+    <script src="./code.js"></script>
 </body>
 
 </html>

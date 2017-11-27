@@ -21,10 +21,11 @@ body {
     max-height: 500px;
 }
 
-h1 {
+h2 {
     text-align: center;
     font-family: 'Spectral SC', serif;
     font-style: regular;
+    font-size: 28px;
 }
 
 #textDiv {
