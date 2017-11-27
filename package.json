@@ -1,0 +1,23 @@
+{
+  "name": "moviereview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "code.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "stylez": "lessc stylez.less stylez.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joonsson/MovieReview.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joonsson/MovieReview/issues"
+  },
+  "homepage": "https://github.com/joonsson/MovieReview#readme",
+  "devDependencies": {
+    "less": "^2.7.3"
+  }
+}

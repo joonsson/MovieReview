@@ -1,51 +1,52 @@
-let rating = 5;
+let rating = 3;
 let audio = new Audio('StarWars.mp3');
+let ui = {
+    title: $("#title"),
+    image: $("#image"),
+    text: $("#text"),
+    list: $("#list"),
+    stars: $("#starDiv")
+}
+
+ui.stars.click("span", function (e) {
+    let star = $(e.target);
+    let starri = parseInt(star.attr("id"));
+    if (starri <= 6 && starri >= 1) {
+        rating = starri;
+        changeStarRating(starri);
+    }
+});
+ui.stars.mouseover("span", function (e) {
+    let star = $(e.target);
+    let starri = parseInt(star.attr("id"));
+    if (starri <= 6 && starri >= 1) {
+        changeStarRating(starri);
+    }
+});
+ui.stars.mouseleave("span", function (e) {
+    changeStarRating(rating);
+});
+
 function renderMovie(movie) {
-    document.getElementById("title").src = movie.title;
-    document.getElementById("image").src = movie.image;
-    document.getElementById("text").innerText = movie.text;
-    document.getElementById("list").innerHTML = movie.actors;
+    ui.title.attr("src", movie.title);
+    ui.image.attr("src", movie.image);
+    ui.text.text(movie.text);
+    ui.list.html(movie.actors);
 }
 
 function changeStarRating(grade) {
-    let stars = document.getElementById("starDiv");
-    stars.innerHTML="";
-    for (let i = 1; i <= grade; i++) {
-        let filledStar = document.createElement("span");
-        filledStar.innerHTML="&#9733";
-        filledStar.className = "filled star";
-        filledStar.addEventListener("click", function() {
-            rating = i;
-            changeStarRating(i);
-        });
-        filledStar.addEventListener("mouseenter", function() {
-            changeStarRating(i);
-        });
-        filledStar.addEventListener("mouseleave", function() {
-            changeStarRating(rating);
-        });
-        stars.appendChild(filledStar);
-    }
-    for (let i = grade + 1; i <= 5; i++) {
-        let emptyStar = document.createElement("span");
-        emptyStar.innerHTML="&#9733";
-        emptyStar.className = "empty star";
-        emptyStar.addEventListener("click", function() {
-            rating = i;
-            changeStarRating(i);
-        });
-        emptyStar.addEventListener("mouseenter", function() {
-            changeStarRating(i);
-        });
-        emptyStar.addEventListener("mouseleave", function() {
-            changeStarRating(rating);
-        });
-        stars.appendChild(emptyStar);
+    for (let i = 1; i <= 5; i++) {
+        let star = $("#" + i);
+        if (i <= grade) {
+            star.addClass("filled");
+        } else {
+            star.removeClass("filled");
+        }
     }
 }
 
-window.onload = function() {
+window.onload = function () {
     //audio.play();
 };
 renderMovie(movieData);
-changeStarRating(rating);
+changeStarRating(3);
