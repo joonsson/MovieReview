@@ -21,16 +21,35 @@ body {
     max-height: 500px;
 }
 
+#starDiv {
+    font-size: 24px;
+    text-align: center;
+}
+
+.star {
+    user-select: none;
+    cursor: pointer;
+}
+
+.filled {
+    color: black;
+}
+
+.empty {
+    color: rgb(180, 180, 180);
+}
+
 h2 {
     text-align: center;
     font-family: 'Spectral SC', serif;
     font-style: regular;
-    font-size: 28px;
+    font-size: 32px;
+    margin-bottom: 5px;
 }
 
 #textDiv {
     padding: 40px;
-    padding-top: 100px;
+    padding-top: 74px;
     max-width: 400px;
     max-height: 500px;
 }
