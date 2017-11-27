@@ -2,28 +2,53 @@ body {
     font-family: 'Roboto', sans-serif;
     font-style: regular;
     background-color: black;
-    background-image: url(https://wallpapercave.com/wp/bV3WiYh.jpg);
-    color: rgb(40, 0, 54);
+    /*background-image: url(https://wallpapercave.com/wp/bV3WiYh.jpg);*/
+    background-image: url(https://i.ytimg.com/vi/EZ7la-hMNuk/maxresdefault.jpg);
+    color: white;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 .container {
     display: flex;
     flex-direction: row;
-    margin: auto;
+    /*margin: auto;
     margin-top: 10%;
     width: 800px;
     padding: 40px;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.4);*/
+}
+
+.starwars {
+    display: flex;
+    justify-content: center;
+    height: 800px;
+    width: 800px;
+    perspective: 400px;
+    color: #feda4a;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 500%;
+    font-weight: 600;
+    letter-spacing: 6px;
+    line-height: 150%;
+    text-align: center;
+    flex-grow: 3;
+}
+
+#imageDiv {
+    width: 20%;
+    margin-left: 40px;
 }
 
 #image {
     max-width: 400px;
-    max-height: 500px;
 }
 
 #starDiv {
-    font-size: 24px;
+    font-size: 34px;
     text-align: center;
+    text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
 }
 
 .star {
@@ -36,7 +61,17 @@ body {
 }
 
 .empty {
-    color: rgb(180, 180, 180);
+    color: rgb(40, 40, 40);
+    text-shadow: none;
+}
+
+#title {
+    max-height: 400px;
+}
+
+#titleDiv {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 h2 {
@@ -48,12 +83,50 @@ h2 {
 }
 
 #textDiv {
-    padding: 40px;
-    padding-top: 74px;
-    max-width: 400px;
-    max-height: 500px;
+    margin-top: 800px;
+    max-width: 80%;
+}
+
+.crawl {
+    position: relative;
+    transform-origin: 50% 100%;
+    animation: crawl 60s linear;
+}
+
+.fade {
+    position: relative;
+    width: 100%;
+    min-height: 20vh;
+    max-height: 40vh;
+    top: -25px;
+    background-image: linear-gradient(0deg, transparent, black 75%);
+    z-index: 1;
+}
+
+@keyframes crawl {
+    0% {
+      top: 0;
+      transform: rotateX(20deg) translateZ(0);
+    }
+    100% { 
+      top: -6000px;
+      transform: rotateX(25deg) translateZ(-2500px);
+    }
 }
 
 ul {
-    padding-left: 15px;
+    list-style: none;
+    padding: 0;
 }
+
+li {
+    padding-left: 1.3em;
+}
+
+li:before {
+    content: "★";
+    text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+    display: inline-block;
+    margin-left: -1.3em;
+    width: 1.3em;
+  }

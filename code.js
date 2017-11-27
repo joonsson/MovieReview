@@ -1,6 +1,7 @@
 let rating = 5;
+let audio = new Audio('StarWars.mp3');
 function renderMovie(movie) {
-    document.getElementById("title").innerText = movie.title;
+    document.getElementById("title").src = movie.title;
     document.getElementById("image").src = movie.image;
     document.getElementById("text").innerText = movie.text;
     document.getElementById("list").innerHTML = movie.actors;
@@ -43,5 +44,8 @@ function changeStarRating(grade) {
     }
 }
 
+window.onload = function() {
+    //audio.play();
+};
 renderMovie(movieData);
 changeStarRating(rating);
