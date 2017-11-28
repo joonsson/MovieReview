@@ -9,17 +9,21 @@ let ui = {
     list: $("#list"),
     stars: $("#starDiv")
 }
+let timeout;
 
 function delayedRestart() {
-    window.setTimeout(restart, 10000);
+    timeout = window.setTimeout(restart, 40000);
+    if (timeout == timeout) {
+        timeout = NaN;
+    }
 }
 
 function restart() {
-    var starWars = $("#starwars"),
-        newWars = starWars.clone(true);
-    starWars.before(newWars);
+    var crawl = $("#textDiv"),
+        newCrawl = crawl.clone(true);
+    crawl.before(newCrawl);
 
-    $("." + starWars.attr("class") + ":last").remove();
+    $("." + crawl.attr("class") + ":last").remove();
     delayedRestart();
 }
 ui.stars.click("span", function (e) {
