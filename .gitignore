@@ -1,3 +1,4 @@
 *.exe
 *.obj
 node_modules
+distribution
