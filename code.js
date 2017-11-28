@@ -12,7 +12,7 @@ let ui = {
 let timeout;
 
 function delayedRestart() {
-    timeout = window.setTimeout(restart, 40000);
+    timeout = window.setTimeout(restart, 34000);
     if (timeout == timeout) {
         timeout = NaN;
     }
