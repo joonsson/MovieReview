@@ -1,5 +1,5 @@
 let $ = require("jquery");
-let audio = new Audio('StarWars.mp3');
+let audio = new Audio("StarWars.mp3");
 let movieData = require("./data");
 let rating = movieData.rating;
 let ui = {

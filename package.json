@@ -5,10 +5,13 @@
   "main": "code.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lintless": "stylelint stylez.less",
+    "lintjs": "eslint .",
+    "lint": "npm run lintless && npm run lintjs",
     "less": "lessc stylez.less distribution/stylez.css",
     "bundle": "webpack",
     "copyindex": "cp index.html distribution/index.html",
-    "build": "npm run bundle && npm run less && npm run copyindex"
+    "build": "npm run lint && npm run bundle && npm run less && npm run copyindex"
   },
   "repository": {
     "type": "git",
@@ -21,7 +24,9 @@
   },
   "homepage": "https://github.com/joonsson/MovieReview#readme",
   "devDependencies": {
+    "eslint": "^4.12.0",
     "less": "^2.7.3",
+    "stylelint": "^8.3.1",
     "webpack": "^3.8.1"
   },
   "dependencies": {
