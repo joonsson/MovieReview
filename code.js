@@ -10,6 +10,18 @@ let ui = {
     stars: $("#starDiv")
 }
 
+function delayedRestart() {
+    window.setTimeout(restart, 10000);
+}
+
+function restart() {
+    var starWars = $("#starwars"),
+        newWars = starWars.clone(true);
+    starWars.before(newWars);
+
+    $("." + starWars.attr("class") + ":last").remove();
+    delayedRestart();
+}
 ui.stars.click("span", function (e) {
     let star = $(e.target);
     let starri = parseInt(star.attr("id"));
@@ -48,7 +60,8 @@ function changeStarRating(grade) {
 }
 
 window.onload = function () {
+    renderMovie(movieData);
+    changeStarRating(rating);
     //audio.play();
+    delayedRestart();
 };
-renderMovie(movieData);
-changeStarRating(rating);
