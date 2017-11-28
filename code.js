@@ -1,5 +1,5 @@
 let $ = require("jquery");
-let audio = new Audio("StarWars.mp3");
+//let audio = new Audio("StarWars.mp3");
 let movieData = require("./data");
 let rating = movieData.rating;
 let ui = {
@@ -25,7 +25,7 @@ ui.stars.mouseover("span", function (e) {
         changeStarRating(starri);
     }
 });
-ui.stars.mouseleave("span", function (e) {
+ui.stars.mouseleave("span", function () {
     changeStarRating(rating);
 });
 

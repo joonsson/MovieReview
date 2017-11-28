@@ -1,6 +1,14 @@
 {
+    "env" : {
+        "node" : true,
+        "jquery" : true
+      },
+      "globals": {
+        "window": true
+      },
     "parserOptions": { "ecmaVersion": 6 },
     "rules": {
         "no-alert": 2
-    }
+    },
+    "extends": "eslint:recommended"
   }
