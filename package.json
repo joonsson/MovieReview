@@ -5,7 +5,8 @@
   "main": "code.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "stylez": "lessc stylez.less stylez.css"
+    "stylez": "lessc stylez.less stylez.css",
+    "bundle": "webpack"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,10 @@
   },
   "homepage": "https://github.com/joonsson/MovieReview#readme",
   "devDependencies": {
-    "less": "^2.7.3"
+    "less": "^2.7.3",
+    "webpack": "^3.8.1"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
   }
 }

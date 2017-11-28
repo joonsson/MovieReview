@@ -1,5 +1,7 @@
-let rating = 3;
+let $ = require("jquery");
 let audio = new Audio('StarWars.mp3');
+let movieData = require("./data");
+let rating = movieData.rating;
 let ui = {
     title: $("#title"),
     image: $("#image"),
@@ -49,4 +51,4 @@ window.onload = function () {
     //audio.play();
 };
 renderMovie(movieData);
-changeStarRating(3);
+changeStarRating(rating);
