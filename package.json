@@ -10,7 +10,7 @@
     "lint": "npm run lintless && npm run lintjs",
     "less": "lessc stylez.less distribution/stylez.css",
     "bundle": "webpack",
-    "copyindex": "cp index.html distribution/index.html",
+    "copyindex": "cp template.html distribution/index.html",
     "build": "npm run lint && npm run bundle && npm run less && npm run copyindex"
   },
   "repository": {
