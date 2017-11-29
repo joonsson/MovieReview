@@ -4,11 +4,11 @@ import { movieData } from "./data";
 import { Ireview } from "./interface";
 let rating = movieData.rating;
 const ui = {
-    title: $("#title"),
     image: $("#image"),
-    text: $("#text"),
     list: $("#list"),
     stars: $("#starDiv"),
+    text: $("#text"),
+    title: $("#title"),
 };
 let timeout;
 
