@@ -6,11 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lintless": "stylelint stylez.less",
-    "lintts": "tslint -c tslint.json '*.ts'",
+    "lintts": "tslint -c tslint.json 'src/**/*.ts'",
     "lint": "npm run lintless && npm run lintts",
-    "less": "lessc stylez.less distribution/stylez.css",
+    "less": "lessc src/stylez.less distribution/stylez.css",
     "bundle": "webpack",
-    "copyindex": "cp template.html distribution/index.html",
+    "copyindex": "cp src/template.html distribution/index.html",
     "build": "npm run lint && npm run bundle && npm run less && npm run copyindex"
   },
   "repository": {

@@ -1,6 +1,6 @@
 module.exports = {
     devtool: 'source-map',
-    entry: './code.ts',
+    entry: './src/script/code.ts',
     resolve: {
       extensions: ['.ts', '.js']
     },
