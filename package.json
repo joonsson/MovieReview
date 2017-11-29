@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lintless": "stylelint stylez.less",
-    "lintjs": "eslint .",
-    "lint": "npm run lintless && npm run lintjs",
+    "lintts": "tslint -c tslint.json '*.ts'",
+    "lint": "npm run lintless && npm run lintts",
     "less": "lessc stylez.less distribution/stylez.css",
     "bundle": "webpack",
     "copyindex": "cp template.html distribution/index.html",
@@ -24,10 +24,12 @@
   },
   "homepage": "https://github.com/joonsson/MovieReview#readme",
   "devDependencies": {
-    "eslint": "^4.12.0",
     "less": "^2.7.3",
     "stylelint": "^8.3.1",
     "stylelint-config-recommended": "^2.0.0",
+    "ts-loader": "^3.1.1",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.2",
     "webpack": "^3.8.1"
   },
   "dependencies": {

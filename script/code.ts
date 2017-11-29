@@ -1,6 +1,6 @@
-let $ = require("jquery");
+import * as $ from "jquery";
 //let audio = new Audio("StarWars.mp3");
-let movieData = require("./data");
+import {movieData} from "./data";
 let rating = movieData.rating;
 let ui = {
     title: $("#title"),
