@@ -1,6 +1,7 @@
 import * as $ from "jquery";
 // let audio = new Audio("StarWars.mp3");
-import {movieData} from "./data";
+import { movieData } from "./data";
+import { Ireview } from "./interface";
 let rating = movieData.rating;
 const ui = {
     title: $("#title"),
@@ -45,7 +46,7 @@ ui.stars.mouseleave("span", () => {
     changeStarRating(rating);
 });
 
-function renderMovie(movie) {
+function renderMovie(movie: Ireview) {
     ui.title.attr("src", movie.title);
     ui.image.attr("src", movie.image);
     ui.text.text(movie.text);
