@@ -13,30 +13,30 @@
 
 <body ng-app="reviewApp" ng-cloak>
     <div class="fade"></div>
-    <section class="container" ng-controller="reviewController">
+    <section class="container" ng-controller="reviewController as ctrl">
         <div id="imageDiv">
-            <img id="image" ng-src="{{movie.image}}" ng-click="changeMovie()">
+            <img id="image" ng-sctrl="{{ctrl.movie.image}}" ng-click="ctrl.changeMovie()">
             <div id="starDiv">
-                <span id="1" class="star" ng-class="{filled: rating >= 1}" ng-click="changeRating(1)" ng-mouseenter="changeStarRating(1)" ng-mouseleave="changeStarRating(0)">&#9733;</span>
-                <span id="2" class="star" ng-class="{filled: rating >= 2}" ng-click="changeRating(2)" ng-mouseenter="changeStarRating(2)" ng-mouseleave="changeStarRating(0)">&#9733;</span>
-                <span id="3" class="star" ng-class="{filled: rating >= 3}" ng-click="changeRating(3)" ng-mouseenter="changeStarRating(3)" ng-mouseleave="changeStarRating(0)">&#9733;</span>
-                <span id="4" class="star" ng-class="{filled: rating >= 4}" ng-click="changeRating(4)" ng-mouseenter="changeStarRating(4)" ng-mouseleave="changeStarRating(0)">&#9733;</span>
-                <span id="5" class="star" ng-class="{filled: rating >= 5}" ng-click="changeRating(5)" ng-mouseenter="changeStarRating(5)" ng-mouseleave="changeStarRating(0)">&#9733;</span>
+                <span id="1" class="star" ng-class="{filled: ctrl.rating >= 1}" ng-click="ctrl.changeRating(1)" ng-mouseenter="ctrl.changeStarRating(1)" ng-mouseleave="ctrl.changeStarRating(0)">&#9733;</span>
+                <span id="2" class="star" ng-class="{filled: ctrl.rating >= 2}" ng-click="ctrl.changeRating(2)" ng-mouseenter="ctrl.changeStarRating(2)" ng-mouseleave="ctrl.changeStarRating(0)">&#9733;</span>
+                <span id="3" class="star" ng-class="{filled: ctrl.rating >= 3}" ng-click="ctrl.changeRating(3)" ng-mouseenter="ctrl.changeStarRating(3)" ng-mouseleave="ctrl.changeStarRating(0)">&#9733;</span>
+                <span id="4" class="star" ng-class="{filled: ctrl.rating >= 4}" ng-click="ctrl.changeRating(4)" ng-mouseenter="ctrl.changeStarRating(4)" ng-mouseleave="ctrl.changeStarRating(0)">&#9733;</span>
+                <span id="5" class="star" ng-class="{filled: ctrl.rating >= 5}" ng-click="ctrl.changeRating(5)" ng-mouseenter="ctrl.changeStarRating(5)" ng-mouseleave="ctrl.changeStarRating(0)">&#9733;</span>
             </div>
         </div>
         <section class="starwars">
             <div id="textDiv" class="crawl">
                 <div id="titleDiv">
-                    <h1 id="title">{{movie.title}}</h1>
+                    <h1 id="title">{{ctrl.movie.title}}</h1>
                 </div>
-                <p id="text">{{movie.text}}</p>
+                <p id="text">{{ctrl.movie.text}}</p>
                 <ul id="list">
-                    <li ng-repeat="actor in movie.actors">{{actor}}</li>
+                    <li ng-repeat="actor in ctrl.movie.actors">{{actor}}</li>
                 </ul>
             </div>
         </section>
     </section>
-    <script src="./bundle.js"></script>
+    <script sctrl="./bundle.js"></script>
 </body>
 
 </html>
