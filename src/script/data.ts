@@ -1,6 +1,6 @@
 import { Ireview } from "./interface";
 export const movieData: Ireview = {
-  actors: "<li>Mark Hamill</li> <li>Carrie Fisher</li> <li>Harrison Ford</li>",
+  actors: ["Mark Hamill", "Carrie Fisher", "Harrison Ford"],
   image: "https://images-na.ssl-images-amazon.com/images/M/MV5BZDk2NmNhZDgtZDgzZS00NTRkLWFiYjUtNGMzZTYwNTFhYj" +
     "FmXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,634,1000_AL_.jpg",
   rating: 5,

@@ -1,16 +1,27 @@
-import * as $ from "jquery";
-// let audio = new Audio("StarWars.mp3");
+import * as angular from "angular";
 import { movieData } from "./data";
 import { Ireview } from "./interface";
+// let audio = new Audio("StarWars.mp3");
+const app = angular.module("reviewApp", []);
 let rating = movieData.rating;
-const ui = {
-    image: $("#image"),
-    list: $("#list"),
-    stars: $("#starDiv"),
-    text: $("#text"),
-    title: $("#title"),
-};
 let timeout;
+
+app.controller("reviewController", ($scope) => {
+    $scope.movie = movieData;
+    $scope.rating = rating;
+
+    $scope.changeRating = (newRating) => {
+        rating = newRating;
+        $scope.rating = rating;
+    };
+    $scope.changeStarRating = (newRating) => {
+        if (newRating === 0) {
+            $scope.rating = rating;
+        } else {
+            $scope.rating = newRating;
+        }
+    };
+});
 
 function delayedRestart() {
     timeout = window.setTimeout(restart, 34000);
@@ -20,14 +31,22 @@ function delayedRestart() {
 }
 
 function restart() {
-    const crawl = $("#textDiv");
-    const newCrawl = crawl.clone(true);
-    crawl.before(newCrawl);
 
-    $("." + crawl.attr("class") + ":last").remove();
+    const crawl = document.getElementById("textDiv");
+    crawl.classList.remove("crawl");
+    setTimeout(() => {
+        crawl.classList.add("crawl");
+    }, 1);
+
+    /* const crawl = document.getElementById("textDiv");
+    const newCrawl = crawl.cloneNode(true);
+    crawl.insertBefore(newCrawl, crawl);
+
+    document.querySelector("." + crawl.getAttribute("class") + ":last").remove(); */
     delayedRestart();
 }
-ui.stars.click("span", (e) => {
+
+/* ui.stars.click("span", (e) => {
     const star = $(e.target);
     const starri = parseInt(star.attr("id"), 10);
     if (starri <= 6 && starri >= 1) {
@@ -62,11 +81,9 @@ function changeStarRating(grade) {
             star.removeClass("filled");
         }
     }
-}
+} */
 
 window.onload = () => {
-    renderMovie(movieData);
-    changeStarRating(rating);
     // audio.play();
     delayedRestart();
 };

@@ -2,6 +2,6 @@ export interface Ireview {
     title: string;
     image: string;
     text: string;
-    actors: string;
+    actors: string[];
     rating: number;
 }
