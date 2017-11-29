@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="./stylez.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Spectral+SC" rel="stylesheet">
-    <link rel="shortcut icon" type="image/png" href="./DeathStar.ico"/>
+    <link rel="shortcut icon" type="image/ico" href="./DeathStar.ico"/>
     <title>Moviez</title>
 </head>
 
@@ -16,12 +16,9 @@
     <section class="container" ng-controller="reviewController as ctrl">
         <div id="imageDiv">
             <img id="image" ng-src="{{ctrl.movie.image}}" ng-click="ctrl.changeMovie()">
+            <img id="favicon" class="hidden" src=./DeathStar.ico">
             <div id="starDiv">
-                <span id="1" class="star" ng-class="{filled: ctrl.rating >= 1}" ng-click="ctrl.changeRating(1)" ng-mouseenter="ctrl.changeStarRating(1)" ng-mouseleave="ctrl.changeStarRating(0)">&#9733;</span>
-                <span id="2" class="star" ng-class="{filled: ctrl.rating >= 2}" ng-click="ctrl.changeRating(2)" ng-mouseenter="ctrl.changeStarRating(2)" ng-mouseleave="ctrl.changeStarRating(0)">&#9733;</span>
-                <span id="3" class="star" ng-class="{filled: ctrl.rating >= 3}" ng-click="ctrl.changeRating(3)" ng-mouseenter="ctrl.changeStarRating(3)" ng-mouseleave="ctrl.changeStarRating(0)">&#9733;</span>
-                <span id="4" class="star" ng-class="{filled: ctrl.rating >= 4}" ng-click="ctrl.changeRating(4)" ng-mouseenter="ctrl.changeStarRating(4)" ng-mouseleave="ctrl.changeStarRating(0)">&#9733;</span>
-                <span id="5" class="star" ng-class="{filled: ctrl.rating >= 5}" ng-click="ctrl.changeRating(5)" ng-mouseenter="ctrl.changeStarRating(5)" ng-mouseleave="ctrl.changeStarRating(0)">&#9733;</span>
+                <span ng-repeat="i in [1,2,3,4,5]"id="1" class="star" ng-class="{filled: ctrl.rating >= i}" ng-click="ctrl.changeRating(i)" ng-mouseenter="ctrl.changeStarRating(i)" ng-mouseleave="ctrl.changeStarRating(0)">&#9733;</span>
             </div>
         </div>
         <section class="starwars">
