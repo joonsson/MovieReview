@@ -8,13 +8,13 @@ const app = angular.module("reviewApp", []);
 let fourRating = SWep4.rating;
 let fiveRating = SWep5.rating;
 let sixRating = SWep6.rating;
-let rating = fourRating;
-let movie = 4;
+let rating = fiveRating;
+let movie = 5;
 let timeout;
 
 app.controller("reviewController", function() {
-    this.movie = SWep4;
-    this.rating = fourRating;
+    this.movie = SWep5;
+    this.rating = rating;
 
     this.changeMovie = () => {
         if (movie === 4) {
