@@ -4,4 +4,5 @@ export interface Ireview {
     text: string;
     actors: string[];
     rating: number;
+    logo: string;
 }

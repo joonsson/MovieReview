@@ -12,7 +12,7 @@ let rating = fourRating;
 let movie = 4;
 let timeout;
 
-app.controller("reviewController", () => {
+app.controller("reviewController", function() {
     this.movie = SWep4;
     this.rating = fourRating;
 
