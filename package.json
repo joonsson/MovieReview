@@ -11,7 +11,9 @@
     "less": "lessc src/stylez.less distribution/stylez.css",
     "bundle": "webpack",
     "copyindex": "cp src/template.html distribution/index.html",
-    "build": "npm run lint && npm run bundle && npm run less && npm run copyindex"
+    "copyico": "cp src/DeathStar.ico distribution/DeathStar.ico",
+    "copy": "npm run copyindex && npm run copyico",
+    "build": "npm run lint && npm run bundle && npm run less && npm run copy"
   },
   "repository": {
     "type": "git",

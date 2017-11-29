@@ -1,14 +1,30 @@
 import * as angular from "angular";
-import { movieData } from "./data";
+import { SWep4 } from "./data";
+import { SWep5 } from "./data";
+import { SWep6 } from "./data";
 import { Ireview } from "./interface";
 // let audio = new Audio("StarWars.mp3");
 const app = angular.module("reviewApp", []);
-let rating = movieData.rating;
+let rating = SWep4.rating;
+let movie = 4;
 let timeout;
 
 app.controller("reviewController", ($scope) => {
-    $scope.movie = movieData;
+    $scope.movie = SWep4;
     $scope.rating = rating;
+
+    $scope.changeMovie = () => {
+        if (movie === 4) {
+            movie++;
+            $scope.movie = SWep5;
+        } else if (movie === 5) {
+            movie++;
+            $scope.movie = SWep6;
+        } else {
+            movie = 4;
+            $scope.movie = SWep4;
+        }
+    };
 
     $scope.changeRating = (newRating) => {
         rating = newRating;
